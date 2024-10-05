@@ -8,148 +8,167 @@ body {
 
 /* Chat Container */
 #chat-container {
-    text-align: center; /* Center alignment */
-    margin-top: 10px; /* Optional margin for spacing */
-    max-width: 600px; /* Width of the chat container */
-    margin: auto; /* Center alignment */
-    padding: 20px; /* Padding around content */
-    background-color: #282828; /* Background color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    animation: fadeIn 0.5s ease-in-out; /* Fade in effect */
+    text-align: center;
+    margin-top: 10px;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Heading */
 h1 {
-    text-align: center; /* Center alignment */
-    color: #ffffff; /* Text color */
+    text-align: center;
+    color: #ffffff;
 }
 
 /* Chat Output */
 #chat-output {
-    margin-top: 10px; /* Space above chat output */
-    border: 1px solid #444; /* Border color */
-    height: 300px; /* Height of the chat output */
-    overflow-y: scroll; /* Scrollable area */
-    padding: 10px; /* Padding within the output area */
-    background-color: #333; /* Background color */
-    border-radius: 5px; /* Rounded corners */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack messages vertically */
-    align-items: flex-start; /* Align items to the start */
+    margin-top: 10px;
+    border: 1px solid #444;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* Scrollbar styling */
 #chat-output::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px;
 }
 
 #chat-output::-webkit-scrollbar-thumb {
-    background-color: #555; /* Scroll bar color */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #555;
+    border-radius: 10px;
 }
 
 #chat-output::-webkit-scrollbar-track {
-    background: #222; /* Background of the scrollbar */
+    background: #222;
 }
 
 /* User Message Box */
 .user-message-box {
-    background-color: #404040; /* Light gray color */
-    color: #ffffff; /* White text color */
-    padding: 5px 10px; /* Padding for the box */
-    border-radius: 10px; /* Rounded corners */
-    margin: 5px 0; /* Margin for spacing */
-    text-align: right; /* Align to the right */
-    display: inline-block; /* Box only expands to fit content */
-    max-width: 70%; /* Maximum width for user message */
-    align-self: flex-end; /* Align user message to the right */
+    background-color: #404040;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    text-align: right;
+    display: inline-block;
+    max-width: 70%;
+    align-self: flex-end;
 }
 
 /* GPT Message */
 .gpt-message {
-    color: #ffffff; /* Text color */
-    margin: 5px 0; /* Margin for spacing */
-    text-align: left; /* Align to the left */
-    max-width: 70%; /* Maximum width for GPT message */
-    align-self: flex-start; /* Align GPT message to the left */
+    color: #ffffff;
+    margin: 5px 0;
+    text-align: left;
+    max-width: 70%;
+    align-self: flex-start;
 }
 
 /* Input Container */
 .input-container {
-    display: flex; /* Flexbox for layout */
-    margin-top: 10px; /* Space above input container */
-    align-items: flex-end; /* Align items at the bottom */
+    display: flex;
+    margin-top: 10px;
+    align-items: flex-end;
 }
 
 /* User Input */
 #user-input {
-    flex-grow: 1; /* Take available space */
-    height: 20px; /* Height of the input area */
-    border: 1px solid #444; /* Border color */
-    border-radius: 25px; /* Rounded corners */
-    background-color: #222; /* Background color */
-    color: #ffffff; /* Text color */
-    padding: 5px; /* Padding within input */
-    resize: none; /* Disable resizing */
-    overflow: hidden; /* Remove overflow */
+    flex-grow: 1;
+    height: 20px;
+    border: 1px solid #444;
+    border-radius: 25px;
+    background-color: #222;
+    color: #ffffff;
+    padding: 5px;
+    resize: none;
+    overflow: hidden;
 }
 
 /* Send Button */
 #send-button {
-    width: 30px; /* Width of the button */
-    height: 30px; /* Height of the button */
-    border: none; /* No border */
-    border-radius: 50%; /* Circle shape */
-    background-color: #666666; /* Gray-black button color */
-    color: white; /* Text color */
-    cursor: pointer; /* Pointer on hover */
-    margin-left: 10px; /* Space between input and button */
-    display: flex; /* Flexbox for centering */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    transition: background-color 0.3s; /* Smooth transition effect */
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: #666666;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
 }
 
 #send-button:hover, #send-button:active {
-    background-color: #333333; /* Darker gray-black color on hover or touch */
+    background-color: #333333;
 }
 
 /* Fade In Animation */
 @keyframes fadeIn {
     from {
-        opacity: 0; /* Start invisible */
+        opacity: 0;
     }
     to {
-        opacity: 1; /* End visible */
+        opacity: 1;
     }
 }
 
-/* Styles for the small contact icon */
-#small-contact-icon {
-    position: absolute; /* Absolute positioning */
-    top: 10px; /* Distance from top */
-    left: 10px; /* Distance from left */
-    color: #666666; /* Gray-black icon color */
-    font-size: 20px; /* Icon size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s; /* Smooth color transition */
+/* Settings icon */
+#settings-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
 }
 
-#small-contact-icon:hover, #small-contact-icon:active {
-    color: #333333; /* Darker gray-black on hover or touch */
+#theme-options {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
 }
 
+#theme-options button {
+    display: block;
+    margin: 5px 0;
+    width: 100px;
+    padding: 5px;
+    color: #fff;
+    background-color: #444;
+    border: none;
+    cursor: pointer;
+}
+
+#theme-options button:hover {
+    background-color: #555;
+}
+
+/* Copyright Styles */
+#copyright {
+    font-size: 10px;
+    margin-top: 10px;
+    color: #888888;
+}
 /* Typing Indicator */
 .typing {
     font-style: italic; /* Italic style for typing indicator */
     color: #aaaaaa; /* Light gray color */
     margin: 5px 0; /* Margin for spacing */
-}
-
-/* Copyright Styles */
-#copyright {
-    font-size: 10px; /* Chhota font size */
-    margin-top: 10px; /* Thoda upar ka margin */
-    color: #888888; /* Light gray color */
 }
