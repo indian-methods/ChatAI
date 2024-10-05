@@ -14,9 +14,10 @@
         </a>
         <h1>
             <i class="fas fa-robot"></i> 
-            FreeBies
+            <span id="custom-title">FreeBies</span>
         </h1>
-        <p>𝗚𝗲𝘁 𝗶𝗻𝘀𝘁𝗮𝗻𝘁 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲𝘀 𝘁𝗼 𝘆𝗼𝘂𝗿 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀!</p>
+        <p id="custom-description">𝗚𝗲𝘁 𝗶𝗻𝘀𝘁𝗮𝗻𝘁 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲𝘀 𝘁𝗼 𝘆𝗼𝘂𝗿 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀!</p>
+        
         <div id="chat-output"></div>
         <div class="input-container">
             <textarea id="user-input" placeholder="Type your message here..."></textarea>
@@ -25,6 +26,34 @@
         
         <div id="copyright">
             <p>&copy; 2024 Freebies Community. All rights reserved.</p>
+        </div>
+
+        <!-- Settings Icon -->
+        <div id="settings-icon">
+            <i class="fas fa-cog"></i>
+        </div>
+
+        <!-- Theme Options Dropdown -->
+        <div id="theme-options" style="display:none;">
+            <button id="pink-theme">Pink Theme</button>
+            <button id="blue-theme">Blue Theme</button>
+            <button id="custom-theme">Custom Theme</button>
+            <button id="reset-theme">Reset Theme</button>
+            
+            <div id="custom-theme-options" style="display:none;">
+                <label>Background Color: <input type="color" id="background-color" /></label><br>
+                <label>Chat Container Color: <input type="color" id="chat-container-color" /></label><br>
+                <label>Text Color: <input type="color" id="text-color" /></label><br>
+                <label>Chat Output Box Color: <input type="color" id="chat-output-color" /></label><br>
+                <label>Question Input Box Color: <input type="color" id="question-input-color" /></label><br>
+                <button id="apply-custom-theme">Apply Custom Theme</button>
+            </div>
+
+            <div id="text-edit-options">
+                <label>Custom Title: <input type="text" id="title-input" placeholder="Type custom title" /></label><br>
+                <label>Custom Description: <input type="text" id="description-input" placeholder="Type custom description" /></label><br>
+                <button id="apply-text">Apply Text</button>
+            </div>
         </div>
     </div>
 
