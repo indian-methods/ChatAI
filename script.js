@@ -1,4 +1,48 @@
-// Existing code for sending messages
+// Save theme settings in localStorage
+function saveThemeSettings(theme) {
+    localStorage.setItem("themeSettings", JSON.stringify(theme));
+}
+
+// Load theme settings from localStorage
+function loadThemeSettings() {
+    const theme = JSON.parse(localStorage.getItem("themeSettings"));
+    if (theme) {
+        document.body.style.backgroundColor = theme.bodyColor;
+        document.getElementById("chat-container").style.backgroundColor = theme.chatContainerColor;
+        document.body.style.color = theme.textColor;
+        document.getElementById("chat-output").style.backgroundColor = theme.chatOutputColor;
+        document.getElementById("user-input").style.backgroundColor = theme.questionInputColor;
+    }
+}
+
+// Load text settings from localStorage
+function loadTextSettings() {
+    const customTitle = localStorage.getItem("customTitle");
+    const customDescription = localStorage.getItem("customDescription");
+    if (customTitle) {
+        document.getElementById("custom-title").innerText = customTitle;
+    }
+    if (customDescription) {
+        document.getElementById("custom-description").innerText = customDescription;
+    }
+}
+
+// Default theme colors
+const defaultTheme = {
+    bodyColor: "#181818",
+    chatContainerColor: "#282828",
+    textColor: "#ffffff",
+    chatOutputColor: "#333",
+    questionInputColor: "#222"
+};
+
+// Load settings when the page loads
+window.onload = () => {
+    loadThemeSettings();
+    loadTextSettings();
+};
+
+// Event listeners for sending messages
 document.getElementById("send-button").addEventListener("click", sendMessage);
 document.getElementById("user-input").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
@@ -7,6 +51,7 @@ document.getElementById("user-input").addEventListener("keypress", function(even
     }
 });
 
+// Function to send a message
 function sendMessage() {
     const userInput = document.getElementById("user-input").value;
     const chatOutput = document.getElementById("chat-output");
@@ -48,3 +93,82 @@ function sendMessage() {
     // Clear the input field after sending
     document.getElementById("user-input").value = ''; 
 }
+
+// Theme switching functionality
+document.getElementById("settings-icon").addEventListener("click", () => {
+    const themeOptions = document.getElementById("theme-options");
+    themeOptions.style.display = themeOptions.style.display === "none" ? "block" : "none";
+});
+
+document.getElementById("pink-theme").addEventListener("click", () => {
+    const theme = {
+        bodyColor: "#ffcccb",
+        chatContainerColor: "#ffb6c1",
+        textColor: "#000000",
+        chatOutputColor: "#ffcccb",
+        questionInputColor: "#ffb6c1"
+    };
+    saveThemeSettings(theme);
+    loadThemeSettings();
+});
+
+document.getElementById("blue-theme").addEventListener("click", () => {
+    const theme = {
+        bodyColor: "#b3cde0",
+        chatContainerColor: "#6497b1",
+        textColor: "#000000",
+        chatOutputColor: "#b3cde0",
+        questionInputColor: "#6497b1"
+    };
+    saveThemeSettings(theme);
+    loadThemeSettings();
+});
+
+document.getElementById("custom-theme").addEventListener("click", () => {
+    const customOptions = document.getElementById("custom-theme-options");
+    customOptions.style.display = customOptions.style.display === "none" ? "block" : "none";
+});
+
+// Apply custom theme colors
+document.getElementById("apply-custom-theme").addEventListener("click", () => {
+    const bodyColor = document.getElementById("background-color").value;
+    const chatContainerColor = document.getElementById("chat-container-color").value;
+    const textColor = document.getElementById("text-color").value;
+    const chatOutputColor = document.getElementById("chat-output-color").value;
+    const questionInputColor = document.getElementById("question-input-color").value;
+
+    // Set the colors
+    const theme = {
+        bodyColor,
+        chatContainerColor,
+        textColor,
+        chatOutputColor,
+        questionInputColor
+    };
+    
+    saveThemeSettings(theme);
+    loadThemeSettings();
+});
+
+// Apply custom text for title and description
+document.getElementById("apply-text").addEventListener("click", () => {
+    const titleInput = document.getElementById("title-input").value;
+    const descriptionInput = document.getElementById("description-input").value;
+
+    if (titleInput) {
+        localStorage.setItem("customTitle", titleInput);
+    }
+    if (descriptionInput) {
+        localStorage.setItem("customDescription", descriptionInput);
+    }
+    loadTextSettings();
+});
+
+// Reset theme button functionality
+document.getElementById("reset-theme").addEventListener("click", () => {
+    localStorage.removeItem("themeSettings");
+    localStorage.removeItem("customTitle");
+    localStorage.removeItem("customDescription");
+    loadThemeSettings();
+    loadTextSettings();
+});
